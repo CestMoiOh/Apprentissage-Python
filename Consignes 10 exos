@@ -1,0 +1,87 @@
+Niveau 1 : Les Bases (Syntaxe, Variables, Boucles)
+Ces projets te feront manipuler les concepts fondamentaux.
+
+1. Calculateur Simple
+
+Concept : Demander à l'utilisateur deux nombres et une opération (+, -, *, /), puis afficher le résultat.
+
+Ce que tu apprendras : input(), if...elif...else, variables, conversion de types (int(), float()).
+
+Défi supplémentaire : Gère la division par zéro pour éviter que le programme ne plante.
+
+2. Devine le Nombre
+
+Concept : L'ordinateur choisit un nombre aléatoire entre 1 et 100. Le joueur doit le deviner. L'ordinateur indique "Plus" ou "Moins" à chaque essai.
+
+Ce que tu apprendras : Module random avec random.randint(), boucle while, comparaisons.
+
+Défi supplémentaire : Compte le nombre de tentatives et affiche un score à la fin.
+
+3. Générateur de Histoires Folles (Mad Libs)
+
+Concept : Demande à l'utilisateur des mots (un nom, un verbe, un adjectif, etc.). Insère ces mots dans un texte pré-écrit pour créer une histoire drôle et absurde.
+
+Ce que tu apprendras : Concatenation de strings, input().
+
+Défi supplémentaire : Crée plusieurs histoires et laisse l'utilisateur en choisir une.
+
+Niveau 2 : Manipulation de Données (Fichiers, APIs)
+On passe à un niveau supérieur en travaillant avec des données externes.
+
+4. Liste de Tâches (To-Do List) en Console
+
+Concept : Un programme qui permet d'afficher, d'ajouter et de supprimer des tâches d'une liste.
+
+Ce que tu apprendras : Listes, fonctions (def), boucles.
+
+Défi supplémentaire :
+
+Sauvegarde la liste dans un fichier .txt pour la conserver entre deux exécutions du programme (module open()).
+
+Ajoute une option "Marquer comme terminée".
+
+5. Analyseur de Fichier Texte
+
+Concept : Un programme qui lit un fichier .txt (comme un livre téléchargé) et donne des statistiques : nombre de mots, nombre de lignes, mot le plus fréquent.
+
+Ce que tu apprendras : Lecture/écriture de fichiers, manipulation de strings (split()), dictionnaires pour compter les occurrences.
+
+Défi supplémentaire : Affiche un "top 5" des mots les plus utilisés.
+
+6. Convertisseur de Devises / Calculateur d'IMC
+
+Concept : Demander un montant et une devise source, et convertir dans une devise cible (en utilisant un taux fixe pour commencer).
+
+Ce que tu apprendras : Fonctions, calculs mathématiques.
+
+Défi supplémentaire : Utilise une API gratuite (comme exchangerate-api.com) pour obtenir les taux de change en temps réel (tu découvriras le module requests).
+
+Niveau 3 : Projets avec Interface Graphique (GUI)
+Tu donnes vie à tes programmes avec une fenêtre, des boutons, etc. Le module le plus simple pour commencer est tkinter (il est inclus avec Python).
+
+7. Application de Liste de Tâches avec Tkinter
+
+Concept : Reprends le projet de la to-do list, mais cette fois avec une interface graphique : une fenêtre, une zone de saisie, un bouton "Ajouter", et une liste avec une case à cocher pour chaque tâche.
+
+Ce que tu apprendras : Les bases de tkinter (Label, Entry, Button, Listbox). La programmation événementielle (gérer les clics de boutons).
+
+8. Petit Jeu : Pierre, Feuille, Ciseaux
+
+Concept : Crée une interface avec trois boutons (Pierre, Feuille, Ciseaux). Quand l'utilisateur clique, l'ordinateur fait un choix aléatoire et le résultat du round s'affiche.
+
+Ce que tu apprendras : tkinter, gestion des événements, logique de jeu.
+
+Niveau 4 : Projets "Web" et Automatisation
+9. Web Scraper Simple (Extracteur de données d'un site web)
+
+Concept : Utilise les modules requests et BeautifulSoup pour extraire des informations d'un site web simple. Par exemple, récupérer les titres des articles de la première page de HackerNews.
+
+Ce que tu apprendras : Modules externes (il faut les installer avec pip), structure HTML basique, éthique du web scraping (ne pas surcharger les serveurs).
+
+Attention : Respectez toujours robots.txt et les conditions d'utilisation d'un site.
+
+10. Bot pour Automatiser une Tâche Répétitive
+
+Concept : Un script qui renomme tous les fichiers d'un dossier selon un pattern spécifique (ex: "vacances_01.jpg", "vacances_02.jpg"), ou qui trie les fichiers dans des dossiers selon leur extension (.jpg dans /images, .pdf dans /documents).
+
+Ce que tu apprendras : Module os et shutil pour interagir avec le système de fichiers.
