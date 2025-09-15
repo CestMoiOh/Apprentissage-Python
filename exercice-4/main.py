@@ -1,5 +1,21 @@
-#Création d'une liste vide qui contiendra les tâches
-taches = []
+#Fonction pour charger la liste
+def charger_taches():
+    taches = []
+    try:
+        with open("list.txt", "r") as fichier:
+            for ligne in fichier:
+                tache = ligne.strip()
+                if tache:
+                    taches.append(tache)
+    except FileNotFoundError:
+        pass
+    return taches
+
+#Fonction pour sauvegarder la liste
+def sauvegarder_taches(taches):
+    with open("todo.txt","w") as fichier:
+        for tache in taches:
+            fichier.write(tache + "\n")
 
 #Fonction pour afficher les tâches
 def afficher_taches(taches):
@@ -42,6 +58,7 @@ def marqué_terminé(taches):
 
 
 #Affichage de l'interface
+taches = charger_taches()
 while True:
     choix = int(input("--- MA LISTE DE TACHES ---\n1. Afficher les tâches\n2. Ajouter une tâche\n3. Supprimer une tâche\n4. Marquer une tâche terminé\n5. Quitter\nTon choix : "))
     match choix:
@@ -49,9 +66,12 @@ while True:
             afficher_taches(taches)
         case 2:
             ajout_tache(taches)
+            sauvergarder_taches(taches)
         case 3:
             suppr_tache(taches)
+            sauvergarder_taches(taches)
         case 4:
             marqué_terminé(taches)
+            sauvergarder_taches(taches)
         case 5:
             break
