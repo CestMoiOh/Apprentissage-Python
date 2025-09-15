@@ -13,7 +13,7 @@ def charger_taches():
 
 #Fonction pour sauvegarder la liste
 def sauvegarder_taches(taches):
-    with open("todo.txt","w") as fichier:
+    with open("list.txt","w") as fichier:
         for tache in taches:
             fichier.write(tache + "\n")
 
@@ -21,7 +21,7 @@ def sauvegarder_taches(taches):
 def afficher_taches(taches):
     print("\n--- VOS TÂCHES ---")
     for i, tache in enumerate(taches):
-        nom = tache[i]
+        nom = tache[0]
         terminée = tache[1]
         statut = "✓" if terminée else "☐"
         print(f"{i+1}. [{statut}] {nom}")
@@ -29,7 +29,7 @@ def afficher_taches(taches):
 
 #Fonction d'ajout d'une tâche
 def ajout_tache(taches):
-    tacheajout = input("Entrez la tâche à ajouter : "),
+    tacheajout = input("Entrez la tâche à ajouter : ")
     taches.append([tacheajout, False])
     print(f"Tâche {tacheajout} ajoutée avec succès !")
 
@@ -66,12 +66,12 @@ while True:
             afficher_taches(taches)
         case 2:
             ajout_tache(taches)
-            sauvergarder_taches(taches)
+            sauvegarder_taches(taches)
         case 3:
             suppr_tache(taches)
-            sauvergarder_taches(taches)
+            sauvegarder_taches(taches)
         case 4:
             marqué_terminé(taches)
-            sauvergarder_taches(taches)
+            sauvegarder_taches(taches)
         case 5:
             break
