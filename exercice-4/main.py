@@ -1,23 +1,30 @@
-#Création d'une liste vide
+#Création d'une liste vide qui contiendra les tâches
 taches = []
 
+#Fonction pour afficher les tâches
 def afficher_taches(taches):
     print("\n--- VOS TÂCHES ---")
-    for i, tache in enumerate(taches, start=1):
-        print(f"{i}. {tache}")
+    for i, tache in enumerate(taches):
+        nom = tache[i]
+        terminée = tache[1]
+        statut = "✓" if terminée else "☐"
+        print(f"{i+1}. [{statut}] {nom}")
     print("------------------\n")
 
+#Fonction d'ajout d'une tâche
 def ajout_tache(taches):
-    tacheajout = input("Entrez la tâche à ajouter : "),"Pas faite"
-    taches.append(tacheajout)
+    tacheajout = input("Entrez la tâche à ajouter : "),
+    taches.append([tacheajout, False])
     print(f"Tâche {tacheajout} ajoutée avec succès !")
 
+#Fonction de suppression d'une tâche
 def suppr_tache(taches):
     afficher_taches(taches)
     numéro = int(input("Numéro de la tâche à supprimer : "))-1
     del taches[numéro]
     print(f"La tâche numéro : {numéro+1} à été supprimé avec succès !")
 
+#Fonction pour marquer une tâche comme terminé
 def marqué_terminé(taches):
     afficher_taches(taches)
     try:
