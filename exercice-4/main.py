@@ -2,20 +2,27 @@
 def charger_taches():
     taches = []
     try:
-        with open("list.txt", "r") as fichier:
+        with open("exercice-4/list.txt", "r") as fichier:
             for ligne in fichier:
-                tache = ligne.strip()
-                if tache:
-                    taches.append(tache)
+                ligne = ligne.strip()
+                if ligne:
+                    if "|" in ligne:
+                        statut_str, nom_tache = ligne.split("|", 1)
+                        statut = statut_str == "1"
+                        taches.append([nom_tache, statut])
+                    else:
+                        taches.append([ligne, False])
     except FileNotFoundError:
         pass
     return taches
 
 #Fonction pour sauvegarder la liste
 def sauvegarder_taches(taches):
-    with open("list.txt","w") as fichier:
+    with open("exercice-4/list.txt","w") as fichier:
         for tache in taches:
-            fichier.write(tache + "\n")
+            nom_tache = tache[0]
+            statut = "1" if tache[1] else "0"
+            fichier.write(f"{statut}|{nom_tache}\n")
 
 #Fonction pour afficher les tâches
 def afficher_taches(taches):
